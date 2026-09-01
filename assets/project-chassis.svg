@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title desc">
+  <title id="title">Conceptual vehicle operations flow</title>
+  <desc id="desc">Synthetic vehicle events move through validation into a shared operational view.</desc>
+  <rect width="720" height="400" fill="#e8e0d1"/>
+  <g fill="none" stroke="#18332f" stroke-width="3">
+    <path d="M78 201h109m109 0h109m109 0h109"/>
+    <path d="m177 190 12 11-12 11m218-22 12 11-12 11m218-22 12 11-12 11"/>
+  </g>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(78 201)"><circle r="52" fill="#18332f"/><text y="-5" fill="#fff" font-size="14" font-weight="700">SYNTHETIC</text><text y="15" fill="#c8e26b" font-size="14">EVENTS</text></g>
+    <g transform="translate(296 201)"><rect x="-54" y="-54" width="108" height="108" rx="6" fill="#e67859"/><text y="-4" fill="#142824" font-size="14" font-weight="700">VALIDATE</text><text y="16" fill="#142824" font-size="12">&amp; STRUCTURE</text></g>
+    <g transform="translate(514 201)"><path d="M-58 42V-42h116v84z" fill="#fffaf0" stroke="#18332f" stroke-width="3"/><path d="M-42-19h84M-42 0h56M-42 19h72" stroke="#2c5a50" stroke-width="7"/><text y="77" fill="#18332f" font-size="14" font-weight="700">SHARED VIEW</text></g>
+  </g>
+  <text x="36" y="364" fill="#40564f" font-family="Arial,sans-serif" font-size="12" letter-spacing="2">CONCEPTUAL · SANITIZED · NO CORPORATE CONNECTION</text>
+</svg>
+
