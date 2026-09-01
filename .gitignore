@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+~$*
+*.log
+*.tmp
+*.bak
+*.docx
+*.pdf
+*.pbix
+*.pbit
+*.msapp
+.DS_Store
+Thumbs.db
+
