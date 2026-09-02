@@ -51,3 +51,26 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 const preferredLanguage = new URLSearchParams(window.location.search).get("lang")
   || localStorage.getItem("portfolio-language");
 if (preferredLanguage === "pt") loadLanguage("pt").catch(console.error);
+
+let dialogTrigger = null;
+document.querySelectorAll("[data-dialog]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const dialog = document.getElementById(button.dataset.dialog);
+    if (!dialog) return;
+    dialogTrigger = button;
+    document.body.classList.add("dialog-open");
+    dialog.showModal();
+  });
+});
+
+document.querySelectorAll(".case-dialog").forEach((dialog) => {
+  dialog.querySelector("[data-close-dialog]")?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+    dialogTrigger?.focus();
+    dialogTrigger = null;
+  });
+});

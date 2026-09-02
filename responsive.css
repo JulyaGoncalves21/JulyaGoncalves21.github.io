@@ -1,0 +1,11 @@
+.hero {
+  min-height: clamp(650px, 82vh, 860px);
+}
+
+@media (max-width: 620px) {
+  .hero {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 5rem;
+  }
+}
