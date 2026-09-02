@@ -1,15 +1,32 @@
-const translations = {};
+const translations = new Map();
+const supportedLanguages = new Set(["en", "pt"]);
+const languageStatus = document.querySelector("#language-status");
+const languageButtons = [...document.querySelectorAll("[data-lang]")];
 
-const getNested = (object, path) => path.split(".").reduce((value, key) => value?.[key], object);
+const getNested = (object, path) => path
+  .split(".")
+  .reduce((value, key) => value?.[key], object);
 
-async function loadLanguage(language) {
-  if (!translations[language]) {
-    const response = await fetch(`content/${language}.json`);
-    if (!response.ok) throw new Error(`Unable to load ${language} content`);
-    translations[language] = await response.json();
+const safeStorage = {
+  get(key) {
+    try { return window.localStorage.getItem(key); } catch { return null; }
+  },
+  set(key, value) {
+    try { window.localStorage.setItem(key, value); } catch { /* Language still works without storage. */ }
   }
+};
 
-  const copy = translations[language];
+async function getLanguage(language) {
+  if (translations.has(language)) return translations.get(language);
+  const url = new URL(`content/${language}.json`, document.baseURI);
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) throw new Error(`Unable to load ${language} content (${response.status})`);
+  const copy = await response.json();
+  translations.set(language, copy);
+  return copy;
+}
+
+function applyLanguage(copy, language) {
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = getNested(copy, element.dataset.i18n);
     if (typeof value === "string") element.textContent = value;
@@ -24,14 +41,36 @@ async function loadLanguage(language) {
   });
 
   document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-  document.querySelectorAll("[data-lang]").forEach((button) => {
-    button.setAttribute("aria-pressed", String(button.dataset.lang === language));
+  languageButtons.forEach((button) => {
+    const isActive = button.dataset.lang === language;
+    button.setAttribute("aria-pressed", String(isActive));
+    button.setAttribute("aria-current", isActive ? "true" : "false");
   });
-  localStorage.setItem("portfolio-language", language);
+  languageStatus.textContent = copy.a11y.languageChanged;
+  safeStorage.set("portfolio-language", language);
+
+  const url = new URL(window.location.href);
+  if (language === "pt") url.searchParams.set("lang", "pt");
+  else url.searchParams.delete("lang");
+  window.history.replaceState({}, "", url);
 }
 
-document.querySelectorAll("[data-lang]").forEach((button) => {
-  button.addEventListener("click", () => loadLanguage(button.dataset.lang).catch(console.error));
+async function loadLanguage(language) {
+  if (!supportedLanguages.has(language)) language = "en";
+  languageButtons.forEach((button) => { button.disabled = true; });
+  try {
+    const copy = await getLanguage(language);
+    applyLanguage(copy, language);
+  } catch (error) {
+    languageStatus.textContent = "Language content could not be loaded.";
+    console.error(error);
+  } finally {
+    languageButtons.forEach((button) => { button.disabled = false; });
+  }
+}
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => loadLanguage(button.dataset.lang));
 });
 
 const menuButton = document.querySelector(".menu-toggle");
@@ -47,10 +86,6 @@ navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 }));
 
 document.querySelector("#year").textContent = new Date().getFullYear();
-
-const preferredLanguage = new URLSearchParams(window.location.search).get("lang")
-  || localStorage.getItem("portfolio-language");
-if (preferredLanguage === "pt") loadLanguage("pt").catch(console.error);
 
 let dialogTrigger = null;
 document.querySelectorAll("[data-dialog]").forEach((button) => {
@@ -74,3 +109,7 @@ document.querySelectorAll(".case-dialog").forEach((dialog) => {
     dialogTrigger = null;
   });
 });
+
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang");
+const storedLanguage = safeStorage.get("portfolio-language");
+loadLanguage(supportedLanguages.has(requestedLanguage) ? requestedLanguage : storedLanguage || "en");

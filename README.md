@@ -21,6 +21,7 @@ Bilingual static portfolio at the intersection of communication, business transf
 
 - **Vehicle Operations Traceability Platform** — consultation, traceability, transfer timeline and generic document status using only fictional records.
 - **Kaizen Portfolio Analytics** — portfolio overview, contribution map, diagnosis and improvement pipeline using only fictional initiatives, owners and values.
+- **Data Analysis & Dashboards** — four synthetic analytical views covering performance evolution, lead flow, segmentation, campaign engagement and decision support.
 
 Every project visual is a new public-safe derivative. Reference screenshots are intentionally excluded from the repository.
 
@@ -37,4 +38,10 @@ python -m http.server 8000
 ```
 
 Then open <http://localhost:8000/>. Test both language states with the EN/PT control and open each case study from the project cards.
+
+Run the browser regression check with Selenium installed:
+
+```bash
+python tests/portfolio_e2e.py
+```
 
