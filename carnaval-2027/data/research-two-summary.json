@@ -1,0 +1,138 @@
+{
+  "date": "2026-11-23",
+  "destinations": [
+    {
+      "destinationId": "rio",
+      "name": "Rio de Janeiro",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 5,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 20,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "arraial",
+      "name": "Arraial do Cabo",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 6,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "aracaju",
+      "name": "Aracaju",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 4,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "maceio",
+      "name": "Maceió",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 4,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "natal",
+      "name": "Natal",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 11,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "jeri",
+      "name": "Jericoacoara",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 11,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 20,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "salvador",
+      "name": "Salvador",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 10,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "bh",
+      "name": "Belo Horizonte",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 1,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "recife",
+      "name": "Olinda/Recife",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 11,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "lima",
+      "name": "Lima",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 11,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 0,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "santiago",
+      "name": "Santiago",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 1,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 0,
+      "fullyVerifiedTrips": 0
+    },
+    {
+      "destinationId": "buenos",
+      "name": "Buenos Aires",
+      "propertiesResearchedForTwo": 11,
+      "lodgingSearchPrices": 10,
+      "roomRatesCapacityAtLeastTwo": 2,
+      "airbnbPendingPrice": 1,
+      "displayedFlightOffers": 10,
+      "busSearchPending": 1,
+      "fullyVerifiedTrips": 0
+    }
+  ],
+  "meaning": "Preços exibidos e tarifas retornadas, não reserva garantida. Nenhuma viagem integral foi verificada. Airbnb, ônibus e checkout final pendentes."
+}
