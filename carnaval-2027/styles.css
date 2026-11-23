@@ -16,3 +16,11 @@ html{font-size:16px}body{font-size:16px}.aside{background:var(--navy);color:#eef
 .sidefoot{background:#1e3550}.sidefoot strong{color:#ddf2ef}.sidefoot p{color:#c4d3e4}
 
 @media(max-width:680px){.person-buttons button{min-width:0;flex:1;width:auto}.hero-right{display:block;margin-top:18px}.hero-right>span{font-size:11px}.hero-right b{font-size:15px}}
+
+/* Source links in result cards: visible and accessible without opening details. */
+.offer-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.offer-actions a{display:inline-flex;align-items:center;min-height:38px;padding:8px 12px;border:1px solid #9dd6d1;border-radius:9px;background:#e7f7f4;color:#075e61;font-weight:800;font-size:13px;text-decoration:none;line-height:1.2}
+.offer-actions a:hover{background:#caefeb;border-color:#59aca6;text-decoration:underline}
+.offer-actions a:focus-visible{outline:3px solid #319c94;outline-offset:2px}
+.offer-actions .muted{font-size:12px;color:#7d8794}
+@media(max-width:680px){.offer-actions a{width:100%;justify-content:center}}
